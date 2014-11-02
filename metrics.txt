@@ -49,3 +49,24 @@ $ cat /tmp/app.log | ruby http_stat.rb  | lltsv -k sum,count,mean,uri -K | sort 
 0.044599000000000014	12	0.0037165833333333343	POST /signup
 0.028551	12	0.00237925	GET /
 0.011126	1	0.011126	POST /entry/15665
+
+----
+
+image on redis
+
+[isucon@ip-172-31-17-94 bench]$ carton exec perl bench.pl -d /home/isucon/image_source http://127.0.0.1/
+2014-11-02T13:22:39 [20852] [INFO] starting benchmark: concurrency: 6, time: 60
+2014-11-02T13:23:41 [20852] [INFO] done benchmark: score 6287.37637297543, elapsed 61.168 sec = 102.788 / sec
+
+[isucon@ip-172-31-17-94 bench]$ cat /tmp/app.log | ruby http_stat.rb  | lltsv -k sum,count,mean,uri -K | sort -r -n
+163.66117599999987      171     0.9570829005847945      GET /timeline
+44.57486300000002       2710    0.016448288929889306    GET /icon
+20.438628000000005      109     0.18751034862385327     POST /entry
+9.30751200000001        4346    0.002141627243442248    GET /image
+1.9652419999999988      501     0.0039226387225548874   POST /follow
+0.9103500000000002      52      0.017506730769230774    POST /icon
+0.3122979999999998      161     0.0019397391304347813   GET /follow
+0.03729299999999999     27      0.001381222222222222    POST /signup
+0.026082        27      0.0009660000000000001   GET /me
+0.014156999999999998    27      0.0005243333333333332   GET /
+0.005483        1       0.005483        POST /entry/16168
