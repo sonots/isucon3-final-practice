@@ -238,8 +238,7 @@ class Isucon3Final < Sinatra::Base
     FileUtils.move(file, "#{dir}/icon/#{icon}.png") or halt 500
 
     ###########
-    icon_path = "#{dir}/icon/#{icon}.png"
-    redis_set_icon(icon_path)
+    # redis_set_icon "#{dir}/icon/#{icon}.png"
     ###########
 
     mysql.xquery(
@@ -297,7 +296,7 @@ class Isucon3Final < Sinatra::Base
     FileUtils.move(upload[:tempfile].path, "#{dir}/image/#{image_id}.jpg") or halt 500
 
     #########
-    redis_set_image("#{dir}/image/#{image_id}.jpg")
+    # redis_set_image("#{dir}/image/#{image_id}.jpg")
     ########
 
     publish_level = params[:publish_level]
