@@ -296,7 +296,7 @@ class Isucon3Final < Sinatra::Base
     FileUtils.move(upload[:tempfile].path, "#{dir}/image/#{image_id}.jpg") or halt 500
 
     #########
-    # redis_set_image("#{dir}/image/#{image_id}.jpg")
+    redis_set_image("#{dir}/image/#{image_id}.jpg")
     ########
 
     publish_level = params[:publish_level]
