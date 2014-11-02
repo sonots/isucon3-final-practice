@@ -27,6 +27,7 @@ def convert(orig, ext, w, h)
     File.unlink(newfile)
     tmp.unlink
   end
+  File.unlink(newfile)
   data
 end
 
