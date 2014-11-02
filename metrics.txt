@@ -27,3 +27,25 @@ $ cat /tmp/app.log | ruby sql_stat.rb  | lltsv -k sum,count,mean,query -K | sort
 0.000243398     1       0.000243398     DELETE FROM entries WHERE id = ?
 
 $ cat /tmp/app.log | ruby template_stat.rb  | lltsv -k sum,count,mean,template -K | sort -r -n
+
+
+----
+
+/image, /icon に query parameter 付けた
+
+$ cat /tmp/app.log | ruby http_stat.rb  | lltsv -k sum,count,mean,uri -K | sort -r -n
+382.90112200000004	1175	0.325873295319149	GET /image?size=s
+111.181941	324	0.34315413888888885	GET /image?size=m
+34.849573	68	0.5124937205882353	GET /timeline
+33.118958	844	0.03924047156398104	GET /icon?size=s
+7.923207000000003	163	0.04860863190184051	GET /icon?size=m
+2.336274	25	0.09345096	GET /icon?size=l
+1.289352	17	0.07584423529411766	POST /icon
+0.8828889999999996	198	0.004459035353535351	POST /follow
+0.7567709999999999	37	0.020453270270270267	POST /entry
+0.7542339999999998	134	0.005628611940298506	GET /image?size=l
+0.149485	53	0.0028204716981132076	GET /follow
+0.04753400000000001	12	0.0039611666666666675	GET /me
+0.044599000000000014	12	0.0037165833333333343	POST /signup
+0.028551	12	0.00237925	GET /
+0.011126	1	0.011126	POST /entry/15665
