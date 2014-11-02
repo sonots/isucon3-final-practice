@@ -185,7 +185,38 @@ class Isucon3Final < Sinatra::Base
     h = w
 
     content_type 'image/png'
-    convert(icon_path, 'png', w, h)
+    icon_key = "#{icon_path}_#{size}"
+    data = redis.get icon_key
+    if data.nil?
+      puts "redis_get_icon: miss #{icon_key}"
+      data = convert(icon_path, 'png', w, h)
+      redis.set icon_key, data
+    end
+    data
+  end
+
+  def redis_set_icon(icon_path)
+    large_file = "#{icon_path}_l"
+    unless redis.exists large_file
+      puts "redis_set_icon: miss #{large_file}"
+      w = h = ICON_L
+      data = convert(icon_path, 'png', w, h)
+      redis.set large_file, data
+    end
+    small_file = "#{icon_path}_s"
+    unless redis.exists small_file
+      puts "redis_set_icon: miss #{small_file}"
+      w = h = ICON_S
+      data = convert(icon_path, 'png', w, h)
+      redis.set small_file, data
+    end
+    middle_file = "#{icon_path}_m"
+    unless redis.exists middle_file
+      puts "redis_set_icon: miss #{middle_file}"
+      w = h = ICON_M
+      data = convert(icon_path, 'png', w, h)
+      redis.set middle_file, data
+    end
   end
 
   post '/icon' do
@@ -205,6 +236,11 @@ class Isucon3Final < Sinatra::Base
     icon = Digest::SHA256.hexdigest($UUID.generate)
     dir  = load_config['data_dir']
     FileUtils.move(file, "#{dir}/icon/#{icon}.png") or halt 500
+
+    ###########
+    icon_path = "#{dir}/icon/#{icon}.png"
+    redis_set_icon(icon_path)
+    ###########
 
     mysql.xquery(
       'UPDATE users SET icon = ? WHERE id = ?',
