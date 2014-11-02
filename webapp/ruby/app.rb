@@ -8,6 +8,9 @@ require 'fileutils'
 require 'uuid'
 require 'sinatra/template_metrics'
 require 'mysql2/metrics'
+require 'hiredis'
+require 'redis'
+require 'redis/connection/hiredis'
 
 class Isucon3Final < Sinatra::Base
   $stdout.sync = true
@@ -23,6 +26,10 @@ class Isucon3Final < Sinatra::Base
   IMAGE_L = nil
 
   helpers do
+    def redis
+      @redis ||= (Thread.current[:isu4_redis] ||= Redis.new(:host => "127.0.0.1", :port => 6379))
+    end
+
     def load_config
       return $config if $config
       $config = JSON.parse(IO.read(File.dirname(__FILE__) + "/../config/#{ ENV['ISUCON_ENV'] || 'local' }.json"))
@@ -208,6 +215,34 @@ class Isucon3Final < Sinatra::Base
     })
   end
 
+  def redis_set_image(image_file)
+    puts image_file
+    unless redis.exists image_file
+      File.open(image_file, 'r+b') do |new|
+        data = new.read
+        redis.set image_file, data
+      end
+    end
+    small_file = "#{image_file}_s"
+    unless redis.exists small_file
+      w = h = IMAGE_S
+      file = crop_square(image_file, 'jpg')
+      data = convert(file, 'jpg', w, h)
+      File.unlink(file)
+      redis.set small_file, data
+      # puts "  #{small_file}"
+    end
+    middle_file = "#{image_file}_m"
+    unless redis.exists middle_file
+      w = h = IMAGE_M
+      file = crop_square(image_file, 'jpg')
+      data = convert(file, 'jpg', w, h)
+      File.unlink(file)
+      redis.set middle_file, data
+      # puts "  #{middle_file}"
+    end
+  end
+
   post '/entry' do
     mysql = connection
     user  = get_user
@@ -224,6 +259,10 @@ class Isucon3Final < Sinatra::Base
     image_id = Digest::SHA256.hexdigest($UUID.generate)
     dir      = load_config['data_dir']
     FileUtils.move(upload[:tempfile].path, "#{dir}/image/#{image_id}.jpg") or halt 500
+
+    #########
+    redis_set_image("#{dir}/image/#{image_id}.jpg")
+    ########
 
     publish_level = params[:publish_level]
     mysql.xquery(
@@ -307,15 +346,36 @@ class Isucon3Final < Sinatra::Base
       :               IMAGE_L
     h = w
 
-    if w
-      file = crop_square("#{dir}/image/#{image}.jpg", 'jpg')
-      data = convert(file, 'jpg', w, h)
-      File.unlink(file)
+    # if w
+    #   file = crop_square("#{dir}/image/#{image}.jpg", 'jpg')
+    #   data = convert(file, 'jpg', w, h)
+    #   File.unlink(file)
+    # else
+    #   file = File.open("#{dir}/image/#{image}.jpg", 'r+b')
+    #   data = file.read
+    #   file.close
+    # end
+    ###############
+    if size == 'l'
+      image_file = "#{dir}/image/#{image}.jpg"
+      data = redis.get image_file
+      if data.nil?
+        file = File.open(image_file, 'r+b')
+        data = file.read
+        file.close
+        redis.set image_file, data
+      end
     else
-      file = File.open("#{dir}/image/#{image}.jpg", 'r+b')
-      data = file.read
-      file.close
+      image_file = "#{dir}/image/#{image}.jpg_#{size}"
+      data = redis.get image_file
+      if data.nil?
+        file = crop_square("#{dir}/image/#{image}.jpg", 'jpg')
+        data = convert(file, 'jpg', w, h)
+        File.unlink(file)
+        redis.set image_file, data
+      end
     end
+    ##############
 
     content_type 'image/jpeg'
     data

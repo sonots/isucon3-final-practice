@@ -9,6 +9,8 @@ gem 'uuid',            '2.3.7'
 gem 'rack-ltsv_logger', git: 'https://github.com/sonots/rack-ltsv_logger'
 gem 'sinatra-template_metrics', git: 'https://github.com/sonots/sinatra-template_metrics'
 gem 'mysql2-metrics', git: 'https://github.com/sonots/mysql2-metrics'
+gem 'redis'
+gem 'hiredis'
 
 group :development do
   # run "bundle exec shotgun" on development
