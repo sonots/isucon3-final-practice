@@ -216,8 +216,8 @@ class Isucon3Final < Sinatra::Base
   end
 
   def redis_set_image(image_file)
-    puts image_file
     unless redis.exists image_file
+      puts "redis_set_image: miss #{image_file}"
       File.open(image_file, 'r+b') do |new|
         data = new.read
         redis.set image_file, data
@@ -225,21 +225,21 @@ class Isucon3Final < Sinatra::Base
     end
     small_file = "#{image_file}_s"
     unless redis.exists small_file
+      puts "redis_set_image: miss #{small_file}"
       w = h = IMAGE_S
       file = crop_square(image_file, 'jpg')
       data = convert(file, 'jpg', w, h)
       File.unlink(file)
       redis.set small_file, data
-      # puts "  #{small_file}"
     end
     middle_file = "#{image_file}_m"
     unless redis.exists middle_file
+      puts "redis_set_image: miss #{middle_file}"
       w = h = IMAGE_M
       file = crop_square(image_file, 'jpg')
       data = convert(file, 'jpg', w, h)
       File.unlink(file)
       redis.set middle_file, data
-      # puts "  #{middle_file}"
     end
   end
 
@@ -360,6 +360,7 @@ class Isucon3Final < Sinatra::Base
       image_file = "#{dir}/image/#{image}.jpg"
       data = redis.get image_file
       if data.nil?
+        puts "redis_get_image: miss #{image_file}"
         file = File.open(image_file, 'r+b')
         data = file.read
         file.close
@@ -369,6 +370,7 @@ class Isucon3Final < Sinatra::Base
       image_file = "#{dir}/image/#{image}.jpg_#{size}"
       data = redis.get image_file
       if data.nil?
+        puts "redis_get_image: miss #{image_file}"
         file = crop_square("#{dir}/image/#{image}.jpg", 'jpg')
         data = convert(file, 'jpg', w, h)
         File.unlink(file)
