@@ -65,6 +65,7 @@ dir = "./data"
 Dir.glob("#{dir}/image/*.jpg").each do |image_file|
   puts image_file
   unless redis.exists image_file
+    puts "miss #{image_file}"
     File.open(image_file, 'r+b') do |new|
       data = new.read
       redis.set image_file, data

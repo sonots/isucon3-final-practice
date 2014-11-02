@@ -5,8 +5,8 @@ IMAGE_DIR="/home/isucon/image_source"
 
 mysql -e "DELETE FROM user WHERE User=''; DROP DATABASE IF EXISTS isucon; CREATE DATABASE isucon DEFAULT CHARACTER SET utf8; GRANT ALL ON isucon.* to 'isucon'@'%'; FLUSH PRIVILEGES;" -u root mysql
 mysql -uisucon isucon < ../webapp/config/schema.sql
-cat <<'EOF' | mysql u -uisucon isucon
-alter table entries add index image (image)
+cat <<EOF | mysql -uisucon isucon
+alter table entries add index image (image);
 EOF
 
 pushd ../webapp/data
