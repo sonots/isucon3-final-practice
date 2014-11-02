@@ -1,0 +1,1 @@
+{"name":"Sub::Rate","target":"Sub::Rate","provides":{"Sub::Rate::NoMaxRate":{"file":"lib/Sub/Rate/NoMaxRate.pm"},"Sub::Rate":{"file":"lib/Sub/Rate.pm","version":"0.05"}},"pathname":"T/TY/TYPESTER/Sub-Rate-0.05.tar.gz","dist":"Sub-Rate-0.05","version":"0.05"}

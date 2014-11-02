@@ -1,0 +1,1 @@
+{"dist":"Signal-Mask-0.008","target":"Signal::Mask","name":"Signal::Mask","provides":{"Signal::Mask":{"version":"0.008","file":"lib/Signal/Mask.pm"},"Signal::Pending":{"version":"0.008","file":"lib/Signal/Pending.pm"}},"version":"0.008","pathname":"L/LE/LEONT/Signal-Mask-0.008.tar.gz"}

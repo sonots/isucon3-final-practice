@@ -1,0 +1,1 @@
+{"pathname":"I/IS/ISHIGAKI/Test-UseAllModules-0.15.tar.gz","version":"0.15","provides":{"Test::UseAllModules":{"version":"0.15","file":"lib/Test/UseAllModules.pm"}},"target":"Test::UseAllModules","name":"Test::UseAllModules","dist":"Test-UseAllModules-0.15"}

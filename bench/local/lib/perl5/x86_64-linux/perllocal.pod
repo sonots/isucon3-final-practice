@@ -1,0 +1,704 @@
+=head2 Sun Nov  2 00:38:32 2014: C<Module> L<common::sense|common::sense>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.73>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:34 2014: C<Module> L<AnyEvent|AnyEvent>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 7.07>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:35 2014: C<Module> L<AnyEvent::HTTP|AnyEvent::HTTP>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.21>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:37 2014: C<Module> L<Types::Serialiser|Types::Serialiser>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.0>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:39 2014: C<Module> L<JSON::XS|JSON::XS>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.01>
+
+=item *
+
+C<EXE_FILES: bin/json_xs>
+
+=back
+
+=head2 Sun Nov  2 00:38:42 2014: C<Module> L<LWP::MediaTypes|LWP::MediaTypes>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:43 2014: C<Module> L<IO::HTML|IO::HTML>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.001>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:44 2014: C<Module> L<Encode::Locale|Encode::Locale>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.03>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:46 2014: C<Module> L<URI|URI>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.64>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:47 2014: C<Module> L<HTTP::Date|HTTP::Date>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.02>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:47 2014: C<Module> L<HTTP::Message|HTTP::Message>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 6.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:50 2014: C<Module> L<HTTP::Parser::XS|HTTP::Parser::XS>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.16>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:52 2014: C<Module> L<Mozilla::CA|Mozilla::CA>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 20130114>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:38:53 2014: C<Module> L<Class::Accessor::Lite|Class::Accessor::Lite>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:03 2014: C<Module> L<CPAN::Meta::YAML|CPAN::Meta::YAML>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.012>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:03 2014: C<Module> L<Parse::CPAN::Meta|Parse::CPAN::Meta>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.4414>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:03 2014: C<Module> L<CPAN::Meta|CPAN::Meta>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.142690>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:06 2014: C<Module> L<Test::Requires|Test::Requires>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.08>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:08 2014: C<Module> L<ExtUtils::ParseXS|ExtUtils::ParseXS>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.24>
+
+=item *
+
+C<EXE_FILES: lib/ExtUtils/xsubpp>
+
+=back
+
+=head2 Sun Nov  2 00:39:12 2014: C<Module> L<Any::Moose|Any::Moose>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.24>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:13 2014: C<Module> L<Sub::Rate|Sub::Rate>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.05>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:14 2014: C<Module> L<Path::Tiny|Path::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.059>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:17 2014: C<Module> L<JSON|JSON>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 2.90>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:19 2014: C<Module> L<HTML::Tagset|HTML::Tagset>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.20>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:21 2014: C<Module> L<HTML::Parser|HTML::Parser>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.71>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:21 2014: C<Module> L<Parallel::Scoreboard|Parallel::Scoreboard>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.05>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:22 2014: C<Module> L<Parallel::ForkManager|Parallel::ForkManager>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.06>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:25 2014: C<Module> L<Try::Tiny|Try::Tiny>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.22>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:31 2014: C<Module> L<EV|EV>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 4.18>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:53 2014: C<Module> L<Imager|Imager>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 1.000>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:54 2014: C<Module> L<Clone|Clone>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 0.37>
+
+=item *
+
+C<EXE_FILES: >
+
+=back
+
+=head2 Sun Nov  2 00:39:56 2014: C<Module> L<Image::Size|Image::Size>
+
+=over 4
+
+=item *
+
+C<installed into: /home/isucon/isucon3/final/bench/local/lib/perl5>
+
+=item *
+
+C<LINKTYPE: dynamic>
+
+=item *
+
+C<VERSION: 3.232>
+
+=item *
+
+C<EXE_FILES: imgsize>
+
+=back
+
