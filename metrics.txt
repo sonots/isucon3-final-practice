@@ -1,0 +1,29 @@
+$ cat /tmp/app.log | ruby http_stat.rb  | lltsv -k sum,count,mean,uri -K | sort -r -n
+494.83729700000015      1633    0.3030234519289652      GET /image
+43.378438999999986      1032    0.042033371124030994    GET /icon
+34.849573       68      0.5124937205882353      GET /timeline
+1.289352        17      0.07584423529411766     POST /icon
+0.8828889999999996      198     0.004459035353535351    POST /follow
+0.7567709999999999      37      0.020453270270270267    POST /entry
+0.149485        53      0.0028204716981132076   GET /follow
+0.04753400000000001     12      0.0039611666666666675   GET /me
+0.044599000000000014    12      0.0037165833333333343   POST /signup
+0.028551        12      0.00237925      GET /
+0.011126        1       0.011126        POST /entry/15665
+
+$ cat /tmp/app.log | ruby sql_stat.rb  | lltsv -k sum,count,mean,query -K | sort -r -n
+1.7368367170000036      2162    0.0008033472326549508   SELECT * FROM users WHERE api_key = ?
+0.8221902500000006      1633    0.0005034845376607474   SELECT * FROM entries WHERE image = ?
+0.3673308090000003      1018    0.0003608357652259335   SELECT * FROM users WHERE id = ?
+0.159029466     251     0.0006335835298804781   SELECT users.* FROM follow_map JOIN users ON (follow_map.target = users.id) WHERE follow_map.user = ? ORDER BY follow_map.created_at DESC
+0.14649400899999998     383     0.00038249088511749344  SELECT * FROM follow_map WHERE user = ? AND target = ?
+0.09023029300000009     198     0.0004557085505050509   INSERT IGNORE INTO follow_map (user, target, created_at) VALUE (?, ?, NOW())
+0.07624183400000001     32      0.0023825573125000003   SELECT * FROM entries WHERE (user=? OR publish_level=2 OR (publish_level=1 AND user IN (SELECT target FROM follow_map WHERE user=?))) ORDER BY id DESC LIMIT 30
+0.039900662999999996    37      0.0010783962972972972   INSERT INTO entries (user, image, publish_level, created_at) VALUES (?, ?, ?, NOW())
+0.034435208999999994    53      0.0006497209245283018   SELECT * FROM (SELECT * FROM entries WHERE (user=? OR publish_level=2 OR (publish_level=1 AND user IN (SELECT target FROM follow_map WHERE user=?))) AND id > ? ORDER BY id LIMIT 30) AS e ORDER BY e.id DESC
+0.011155512999999995    17      0.0006562066470588233   UPDATE users SET icon = ? WHERE id = ?
+0.009616419000000005    38      0.00025306365789473694  SELECT * FROM entries WHERE id = ?
+0.005089466999999999    12      0.00042412224999999995  INSERT INTO users (name, api_key, icon) VALUES (?, ?, ?)
+0.000243398     1       0.000243398     DELETE FROM entries WHERE id = ?
+
+$ cat /tmp/app.log | ruby template_stat.rb  | lltsv -k sum,count,mean,template -K | sort -r -n
