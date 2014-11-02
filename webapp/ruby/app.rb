@@ -6,6 +6,8 @@ require 'digest/sha2'
 require 'tempfile'
 require 'fileutils'
 require 'uuid'
+require 'sinatra/template_metrics'
+require 'mysql2/metrics'
 
 class Isucon3Final < Sinatra::Base
   $stdout.sync = true

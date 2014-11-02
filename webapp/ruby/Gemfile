@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 gem 'sinatra',         '1.4.3'
 gem 'sinatra-contrib', '1.4.1'
 gem 'unicorn',         '4.6.3'
@@ -6,6 +6,9 @@ gem 'json',            '1.8.0'
 gem 'mysql2',          '0.3.13'
 gem 'mysql2-cs-bind',  '0.0.6'
 gem 'uuid',            '2.3.7'
+gem 'rack-ltsv_logger', git: 'https://github.com/sonots/rack-ltsv_logger'
+gem 'sinatra-template_metrics', git: 'https://github.com/sonots/sinatra-template_metrics'
+gem 'mysql2-metrics', git: 'https://github.com/sonots/mysql2-metrics'
 
 group :development do
   # run "bundle exec shotgun" on development

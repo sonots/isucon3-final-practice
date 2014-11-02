@@ -1,5 +1,26 @@
+GIT
+  remote: https://github.com/sonots/mysql2-metrics
+  revision: 948e3e814f27e7b2cf3804d882aef4ff89c1c10e
+  specs:
+    mysql2-metrics (0.0.1)
+      mysql2
+
+GIT
+  remote: https://github.com/sonots/rack-ltsv_logger
+  revision: c21640347ee585a56901f6e8449f2619b0873ad6
+  specs:
+    rack-ltsv_logger (0.0.1)
+      rack
+
+GIT
+  remote: https://github.com/sonots/sinatra-template_metrics
+  revision: b189f280fa505fb840f4b6148a4f341433f8eb65
+  specs:
+    sinatra-template_metrics (0.0.1)
+      sinatra
+
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     backports (3.3.5)
     json (1.8.0)
@@ -45,8 +66,11 @@ DEPENDENCIES
   json (= 1.8.0)
   mysql2 (= 0.3.13)
   mysql2-cs-bind (= 0.0.6)
+  mysql2-metrics!
+  rack-ltsv_logger!
   shotgun
   sinatra (= 1.4.3)
   sinatra-contrib (= 1.4.1)
+  sinatra-template_metrics!
   unicorn (= 4.6.3)
   uuid (= 2.3.7)
